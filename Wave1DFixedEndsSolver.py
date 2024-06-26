@@ -1,6 +1,6 @@
 import numpy as np
 
-class Wave1DSolver:
+class Wave1DFixedEndsSolver:
     # IMPLEMENTAR BARREIRAS QUE FAZ FUNCAO VELOCIDADE POR RAMOS
     def __init__(self,t0,t1,dt,x0,x1,dx,v,ux0,ux1,ut0):
         self.t0 = t0
@@ -49,12 +49,12 @@ class Wave1DSolver:
 
         # du(x,0)/dt = 0 ta em repouso a corda
         # corrigir algoritmo geral para u(x,t=1)
-        for xj in range (1,self.M-2):
+        for xj in range (1,self.M-1):
             self.S[1,xj] = self.r*(self.S[0,xj-1]-2*self.S[0,xj]+self.S[0,xj+1])/2 + self.S[0,xj]
 
         # Algoritmo ao resto da matrix:
         for tj in range (1,self.N-1):
-            for xj in range(1,self.M-2):
+            for xj in range(1,self.M-1):
                 self.S[tj+1,xj] = self.r*(self.S[tj,xj-1]-2*self.S[tj,xj]+self.S[tj,xj+1]) + 2*self.S[tj,xj] - self.S[tj-1,xj]
 
     def ForwardSolve(self,preLine,Line):
