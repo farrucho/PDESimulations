@@ -1,7 +1,6 @@
 import numpy as np
 
 class Wave1DFixedEndsSolver:
-    # IMPLEMENTAR BARREIRAS QUE FAZ FUNCAO VELOCIDADE POR RAMOS
     def __init__(self,t0,t1,dt,x0,x1,dx,v,ux0,ux1,ut0):
         self.t0 = t0
         self.t1 = t1
@@ -41,7 +40,7 @@ class Wave1DFixedEndsSolver:
     def FullSolve(self):
         # u(0,t) u(1,t) 
         self.S[:,0] = self.ux0
-        self.S[:,self.M-2] = self.ux1
+        self.S[:,self.M-1] = self.ux1
 
         # u(x,0)
         for xj in range(0,self.M):
