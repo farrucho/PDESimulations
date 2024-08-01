@@ -44,6 +44,7 @@ class Wave2DFixedEndsSolver:
             for yj in range(0,self.Y):
                 self.S[0,xj,yj] = self.ut0(xj*self.dq,yj*self.dq)
 
+        # du(x,0)/dt = 0 ta em repouso a corda
         # corrigir algoritmo geral para u(x,t=1)
         for xj in range(1,self.X-1):
             for yj in range(1,self.Y-1):
@@ -54,15 +55,6 @@ class Wave2DFixedEndsSolver:
             for xj in range(1,self.X-1):
                 for yj in range(1,self.Y-1):
                     self.S[tj+1,xj,yj] = 2*self.S[tj,xj,yj] - self.S[tj-1,xj,yj] + self.r*(self.S[tj,xj-1,yj]-2*self.S[tj,xj,yj]+self.S[tj,xj+1,yj]+self.S[tj,xj,yj-1]-2*self.S[tj,xj,yj]+self.S[tj,xj,yj+1])
-
-
-    # def AddGaussianPulse(self,line,pulseX,pulseY):
-    #     if pulseX > self.x0 and pulseX < self.x1: 
-    #         defaultPulse = lambda x: pulseY*np.exp(-(x-pulseX)**2/0.01)
-    #         for xj in range(0,self.M):
-    #             line[xj] +=  defaultPulse(xj*self.dx)
-    #         return line
-    #     return line
 
 
     def Matrix(self):

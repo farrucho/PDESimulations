@@ -45,12 +45,19 @@ class MainWindow(QMainWindow):
         ## rotate x and y grids to face the correct direction
         xgrid.rotate(90, 0, 1, 0)
         ygrid.rotate(90, 1, 0, 0)
+        xgrid.setSize(0,0,0)
+        ygrid.setSize(0,0,0)
+        zgrid.setSize(0,0,0)
 
-        xgrid.setSize(2,2,2)
-        ygrid.setSize(2,2,2)
-        zgrid.setSize(2,2,2)
+        self.plot_graph.opts['distance'] = 3
 
-
+        # self.opts['center'] = Vector(0,0,0)  ## will always appear at the center of the widget
+        # self.opts['distance'] = 10.0         ## distance of camera from center
+        # self.opts['fov'] = 60                ## horizontal field of view in degrees
+        # self.opts['elevation'] = 30          ## camera's angle of elevation in degrees
+        # self.opts['azimuth'] = 45 
+        
+        
         x = np.linspace(self.eq.x0, self.eq.x1, self.eq.X)
         y = np.linspace(self.eq.y0, self.eq.y1, self.eq.Y)
 
@@ -64,12 +71,12 @@ class MainWindow(QMainWindow):
         # Combine into points for the GL plot
         pts = np.vstack([X_flat, Y_flat, Z_flat]).T
 
+
         # Normalize Z values to [0, 1] for color mapping
         norm = Normalize(vmin=0, vmax=Z_flat.max())
-        self.colors = cm.magma(norm(Z_flat))  # https://matplotlib.org/stable/users/explain/colors/colormaps.html
+        colors = cm.jet(norm(Z_flat))  # https://matplotlib.org/stable/users/explain/colors/colormaps.html
 
-
-        line = gl.GLLinePlotItem(pos=pts,color=self.colors)
+        line = gl.GLLinePlotItem(pos=pts,color=colors)
         self.plot_graph.addItem(line)
 
         self.preLine = self.eq.Matrix()[0]
@@ -77,9 +84,10 @@ class MainWindow(QMainWindow):
 
 
 
-    def startSimulation(self):
+    def startSimulation(self,timer): # timer-> 10 para 1D e 100 para 2D
+        # nao esquecer de rodar o fullsolve antes
         self.timer = QtCore.QTimer()
-        self.timer.setInterval(50)
+        self.timer.setInterval(timer)
         self.timer.timeout.connect(partial(self.updatePlot))
         self.timer.start()
 
@@ -106,7 +114,11 @@ class MainWindow(QMainWindow):
             # Combine into points for the GL plot
             pts = np.vstack([X_flat, Y_flat, Z_flat]).T
 
-            line = gl.GLLinePlotItem(pos=pts,color=self.colors)
+            # Normalize Z values to [0, 1] for color mapping
+            norm = Normalize(vmin=0, vmax=Z_flat.max())
+            colors = cm.jet(norm(Z_flat))  # https://matplotlib.org/stable/users/explain/colors/colormaps.html
+
+            line = gl.GLLinePlotItem(pos=pts,color=colors)
             
             # apagar previous plottedlines
             for item in self.plot_graph.items:
