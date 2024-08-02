@@ -23,7 +23,7 @@ class MainWindow(QMainWindow):
         self.plot_graph.getPlotItem().setTitle("Plot in function of time")
         self.eq = eq
         self.plot_graph.setXRange(eq.x0,eq.x1)
-        self.plot_graph.setYRange(np.min(eq.Matrix()[0]),np.max(eq.Matrix()[0]))
+        self.plot_graph.setYRange(-np.max(eq.Matrix()[0]),np.max(eq.Matrix()[0]))
         self.plot_graph.showGrid(x=True, y=True)
         self.eq.FullSolve()
         self.preLine = self.eq.Matrix()[0]
@@ -51,6 +51,7 @@ class MainWindow(QMainWindow):
 
         self.plot_graph.opts['distance'] = 3
 
+        # Base class code
         # self.opts['center'] = Vector(0,0,0)  ## will always appear at the center of the widget
         # self.opts['distance'] = 10.0         ## distance of camera from center
         # self.opts['fov'] = 60                ## horizontal field of view in degrees
@@ -84,8 +85,8 @@ class MainWindow(QMainWindow):
 
 
 
-    def startSimulation(self,timer): # timer-> 10 para 1D e 100 para 2D
-        # nao esquecer de rodar o fullsolve antes
+    def startSimulation(self,timer): # timer recomendado -> 10 para 1D e 100 para 2D
+        # Necessario correr FullSolve() antes
         self.timer = QtCore.QTimer()
         self.timer.setInterval(timer)
         self.timer.timeout.connect(partial(self.updatePlot))
@@ -130,6 +131,7 @@ class MainWindow(QMainWindow):
 
             self.preLine = self.Line
             self.Line = forwardLine
+
 
     def mousePressEvent(self, event):
         # Obter posição na cena
