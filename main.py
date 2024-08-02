@@ -22,7 +22,7 @@ window = MainWindow(eq)
 eq.FullSolve()
 
 #2D
-
+# window.plot2D(eq)
 
 #3D
 window.plot3D(eq)
