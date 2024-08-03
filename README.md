@@ -2,7 +2,7 @@
 
 <p align="center"><img src="https://socialify.git.ci/farrucho/PDESimulations/image?font=Inter&amp;language=1&amp;name=1&amp;owner=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
 
-<p id="description">This repository contains several 1D/2D simulations of partial differential equations (or briefly a PDE) using numerical techniques. At the moment there is an example implementation of the Finite Difference Method used in the wave equation with various boundarie conditions.</p>
+<p id="description">This repository contains several 1D/2D simulations of partial differential equations (or briefly a PDE) using numerical techniques. At the moment there is an example implementation of the Finite Difference Method used in the wave equation with various boundary conditions, along with interactive gaussian pulses added in real time. My notes to this project along with the general FDE algorithm are in the notebook.pdf file.</p>
 
   
   
@@ -12,6 +12,30 @@ Here're some of the project's best features:
 
 *   Wave Equation 1D/2D Free/Fixed Boundaries
 *   Heat Equation **TBA**
+
+<h2>👓 Gallery</h2>
+
+Wave Equation Simulations:
+
+<video width="320" height="240" controls>
+  <source src="./gallery/wave1DFixedEnds.mp4" type="video/mp4">
+</video>
+
+<video width="320" height="240" controls>
+  <source src="./gallery/wave1DFreeEnds.mp4" type="video/mp4">
+</video>
+
+<video width="320" height="240" controls>
+  <source src="./gallery/wave1DFixedEndsInteractive.mp4" type="video/mp4">
+</video>
+
+<video width="320" height="240" controls>
+  <source src="./gallery/wave2DFixedEnds.mp4" type="video/mp4">
+</video>
+
+<video width="320" height="240" controls>
+  <source src="./gallery/wave2DFreeEnds.mp4" type="video/mp4">
+</video>
 
 <h2>🍰 How to run the simulations:</h2>
 
