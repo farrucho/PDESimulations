@@ -17,16 +17,16 @@ Here're some of the project's best features:
 
 Wave Equation Simulations:
 
+https://github.com/user-attachments/assets/5b0634bd-6e39-49c4-b7ab-4a5d722dc27c
 
-https://github.com/user-attachments/assets/20f7842a-b0ec-4d50-9215-bdc62edf34da
+https://github.com/user-attachments/assets/40d13322-da19-4440-9a6c-5ece2ad5f6a4
 
-https://github.com/user-attachments/assets/b5d25a1c-c00e-4f24-a507-62a372820aba
+https://github.com/user-attachments/assets/04dbfd8f-bf99-450e-b4e5-080d0d566744
 
-https://github.com/user-attachments/assets/593f42dd-2cd1-4759-a40d-063d25638e9f
+https://github.com/user-attachments/assets/dd5fd264-ee6c-41f7-bf37-1d2ccffb8443
 
-https://github.com/user-attachments/assets/60eeaf89-605a-48ca-be68-a9f708e1e594
+https://github.com/user-attachments/assets/977a4455-366b-4319-b7ad-87aa49f07add
 
-https://github.com/user-attachments/assets/7d3534ec-3179-4420-ab11-299bd8889ec7
 
 <h2>🍰 How to run the simulations:</h2>
 
