@@ -17,25 +17,16 @@ Here're some of the project's best features:
 
 Wave Equation Simulations:
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/farrucho/PDESimulations/raw/main/gallery/wave1DFixedEnds.mp4" type="video/mp4">
-</video>
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/farrucho/PDESimulations/raw/main/gallery/wave1DFreeEnds.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/20f7842a-b0ec-4d50-9215-bdc62edf34da
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/farrucho/PDESimulations/raw/main/gallery/wave1DFixedEndsInteractive.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/b5d25a1c-c00e-4f24-a507-62a372820aba
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/farrucho/PDESimulations/raw/main/gallery/wave2DFixedEnds.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/593f42dd-2cd1-4759-a40d-063d25638e9f
 
-<video width="320" height="240" controls>
-  <source src="https://github.com/farrucho/PDESimulations/raw/main/gallery/wave2DFreeEnds.mp4" type="video/mp4">
-</video>
+https://github.com/user-attachments/assets/60eeaf89-605a-48ca-be68-a9f708e1e594
+
+https://github.com/user-attachments/assets/7d3534ec-3179-4420-ab11-299bd8889ec7
 
 <h2>🍰 How to run the simulations:</h2>
 
